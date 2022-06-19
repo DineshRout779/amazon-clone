@@ -1,0 +1,20 @@
+.slider-banner {
+  margin-bottom: -280px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), #fff);
+}
+
+.slick-slider {
+  min-height: 100vh;
+  background-color: rgb(37, 35, 35);
+}
+
+.slick-slide img {
+  min-height: 100vh;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: -1;
+}
