@@ -8,14 +8,14 @@ export const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "ADD_TO_BASKET":
+    case 'ADD_TO_BASKET':
       //logic to add item to basket
       return {
         ...state,
         basket: [...state.basket, action.item],
       };
 
-    case "REMOVE_FROM_BASKET":
+    case 'REMOVE_FROM_BASKET':
       //logic to remove item from basket
       let newBasket = [...state.basket];
 
@@ -32,11 +32,6 @@ const reducer = (state, action) => {
       }
 
       return { ...state, basket: newBasket };
-    case "SET_LOGIN":
-      return {
-        ...state,
-        user: action.user,
-      };
     default:
       return state;
   }
