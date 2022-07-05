@@ -4,7 +4,6 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
-import { auth } from './firebase';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -13,11 +12,6 @@ toast.configure();
 function Header() {
   const [{ basket, user }, dispatch] = useStateValue();
 
-  const userLogOut = () => {
-    if (user) {
-      auth.signOut();
-    }
-  };
   const notify = () => {
     toast.info('This function is in development !!!', {
       position: toast.POSITION.TOP_CENTER,
@@ -40,7 +34,7 @@ function Header() {
         </div>
         <div className='header__nav'>
           <Link to={!user && '/login'} className='header__link'>
-            <div className='header__option' onClick={userLogOut}>
+            <div className='header__option'>
               <span className='header__option__lineOne'>Hello,</span>
               <span className='header__option__lineTwo'>
                 {user ? 'Sign Out' : 'Sign In'}
